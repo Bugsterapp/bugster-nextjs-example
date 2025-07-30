@@ -1,0 +1,21 @@
+name: Display and Interaction with Stickers Collection Page
+page: stickers
+page_path: app/stickers/page.tsx
+task: Verify that the stickers collection page displays all sticker products and allows
+  adding stickers to cart
+steps:
+- Navigate to the stickers page
+- Verify the page header 'Stickers Collection' is displayed
+- Verify the subtitle 'Discover our amazing collection of high-quality stickers' is
+  displayed
+- Verify all 6 sticker products are displayed in a grid layout
+- Verify each sticker product displays its name, price, and description
+- Verify each sticker product displays color options
+- Select a sticker product ('Circle Sticker Pack')
+- Select a different color option ('Blue') for the product
+- Click the 'Add to Cart' button
+- Verify a success toast message appears confirming the item was added to cart
+- Verify the button text changes to 'Adding...' when processing and back to 'Add to
+  Cart' when complete
+expected_result: All sticker products are displayed correctly with their information
+  and users can add a sticker to the cart with a selected color

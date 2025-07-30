@@ -1,0 +1,17 @@
+name: Apply promo code to cart
+page: Cart Page
+page_path: app/cart/page.tsx
+task: Verify users can apply and remove promo codes in the cart
+steps:
+- Add a product to cart from the homepage
+- Navigate to the cart page
+- Verify the promo code section is visible in the order summary
+- Enter a valid promo code (e.g., 'SAVE10') in the input field
+- Click the Apply button
+- Verify a success toast appears confirming the promo code was applied
+- Verify the applied promo code appears with its description
+- Verify the order summary totals are updated to reflect the discount
+- Click the Remove button on the applied promo code
+- Verify the promo code is removed and totals are recalculated
+expected_result: User should be able to successfully apply a valid promo code and
+  see it applied to their order with appropriate discount

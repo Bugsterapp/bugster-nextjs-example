@@ -1,0 +1,19 @@
+name: Apply promo code to shopping cart
+page: Shopping Cart
+page_path: app/cart/order-summary.tsx
+task: Test the functionality of applying a valid promo code in the shopping cart
+steps:
+- Navigate to the shopping cart page
+- Verify that the promo code section is displayed
+- Type 'SAVE10' in the promo code input field
+- Click the 'Apply' button
+- Verify that the loading state appears (text changes to 'Applying...')
+- Wait for the loading state to resolve
+- 'Verify that a success toast appears with the message ''Promo code applied: 10%
+  off'''
+- Verify that the applied promo code appears in a green highlighted box
+- 'Verify that the promo code information shows ''SAVE10: 10% off'''
+- Verify that the 'Remove' button is visible next to the applied promo code
+- Verify that the order summary updates to reflect the discount
+expected_result: User should see a valid promo code applied with correct discount
+  information and success message
