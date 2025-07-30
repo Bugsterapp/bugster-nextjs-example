@@ -31,20 +31,23 @@ function OrderSummaryFallback({
   );
 }
 
-async function OrderSummaryContent({
+function OrderSummaryContent({
   showSummerBanner,
   freeDelivery,
+  subtotal,
+  itemCount,
 }: {
   showSummerBanner: boolean;
   freeDelivery: boolean;
+  subtotal: number;
+  itemCount: number;
 }) {
-  const { items } = await getCart();
-  const subtotal = items.length * 20; // Assuming $20 per shirt
+  // Calculate discounts and costs
   const summerDiscount = showSummerBanner ? subtotal * (20 / 100) * -1 : 0; // 20% discount
-  const qualifyingForFreeDelivery = freeDelivery && subtotal > 30;
-  const shippingCost = 5;
-  const shipping = qualifyingForFreeDelivery ? 0 : shippingCost;
-  const total = subtotal + shipping + summerDiscount;
+  const shippingCost = 5.99;
+  const shipping = freeDelivery ? 0 : shippingCost;
+  const tax = subtotal * 0.08; // 8% tax
+  const total = subtotal + shipping + summerDiscount + tax;
 
   return (
     <div className="mt-6 space-y-4">
@@ -64,10 +67,10 @@ async function OrderSummaryContent({
       ) : null}
       <div className="flex items-center justify-between border-t border-gray-200 pt-4">
         <p className="text-sm text-gray-600">Shipping estimate</p>
-        {qualifyingForFreeDelivery ? (
+        {freeDelivery ? (
           <p className="text-sm font-medium text-gray-900">
             <span className="line-through font-normal">
-              {shipping.toFixed(2)} USD
+              {shippingCost.toFixed(2)} USD
             </span>{' '}
             FREE
           </p>
@@ -76,6 +79,12 @@ async function OrderSummaryContent({
             {shipping.toFixed(2)} USD
           </p>
         )}
+      </div>
+      <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+        <p className="text-sm text-gray-600">Tax</p>
+        <p className="text-sm font-medium text-gray-900">
+          {tax.toFixed(2)} USD
+        </p>
       </div>
       <div className="flex items-center justify-between border-t border-gray-200 pt-4">
         <p className="text-base font-medium text-gray-900">Order total</p>
@@ -90,27 +99,23 @@ async function OrderSummaryContent({
 export function OrderSummarySection({
   showSummerBanner,
   freeDelivery,
-  proceedToCheckout,
+  subtotal,
+  itemCount,
 }: {
   showSummerBanner: boolean;
   freeDelivery: boolean;
-  proceedToCheckout: React.ReactNode;
+  subtotal: number;
+  itemCount: number;
 }) {
   return (
-    <section className="mt-16 rounded-lg bg-gray-50 px-6 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
-      <h2 className="text-lg font-medium text-gray-900">Order summary</h2>
-
-      <div className="mt-6">{proceedToCheckout}</div>
-
-      <Suspense
-        fallback={<OrderSummaryFallback showSummerBanner={showSummerBanner} />}
-      >
-        <OrderSummaryContent
-          showSummerBanner={showSummerBanner}
-          freeDelivery={freeDelivery}
-        />
-      </Suspense>
-
+    <div className="mt-6 space-y-4">
+      <OrderSummaryContent
+        showSummerBanner={showSummerBanner}
+        freeDelivery={freeDelivery}
+        subtotal={subtotal}
+        itemCount={itemCount}
+      />
+      
       <div className="mt-6 text-center text-sm text-gray-500">
         <p>
           or{' '}
@@ -122,6 +127,6 @@ export function OrderSummarySection({
           </Link>
         </p>
       </div>
-    </section>
+    </div>
   );
 }

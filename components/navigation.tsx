@@ -56,7 +56,13 @@ export function Navigation() {
                   key={page}
                   className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                 >
-                  {page === 'Home' ? <Link href="/">Home</Link> : page}
+                  {page === 'Home' ? (
+                    <Link href="/">Home</Link>
+                  ) : page === 'Stickers' ? (
+                    <Link href="/stickers">Stickers</Link>
+                  ) : (
+                    page
+                  )}
                 </span>
               );
             })}
