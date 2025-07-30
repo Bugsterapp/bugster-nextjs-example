@@ -1,7 +1,7 @@
 # 🐛 Bugster - Automated Testing for Next.js
 
 **Generate and run comprehensive tests for your Next.js applications with AI-powered automation.**
-
+ 
 This is a demo shirt shop built with Next.js to showcase how Bugster can automatically generate and run tests for your web applications. Follow this step-by-step guide to try it from scratch!
 
 ## 🚀 Phase 1: Try Bugster Locally
