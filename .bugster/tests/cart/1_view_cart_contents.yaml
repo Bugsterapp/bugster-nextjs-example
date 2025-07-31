@@ -7,4 +7,12 @@ steps:
 - Navigate to the cart page
 - Verify product appears in the cart list
 - Verify product details (name, color, size, price) are correct
-expected_result: Cart page displays all added items with correct details
+- Verify the item count badge displays correctly in the order summary
+- Verify estimated delivery date is shown
+- Check if free delivery banner appears when subtotal is below $50
+- Confirm order summary shows correct subtotal, tax (8%), and shipping costs
+- "Verify the proceed to checkout button color is green if subtotal \u2265 $100, blue\
+  \ otherwise"
+expected_result: Cart page displays all added items with correct details, order summary
+  showing item count, estimated delivery date, subtotal, tax, shipping cost (free
+  if over $50), and dynamic banners based on cart value
