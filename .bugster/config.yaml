@@ -1,21 +1,19 @@
 # Bugster Configuration File
 # This file contains your project configuration and test execution preferences.
+# Important: Commit this file to your repository for CI/CD integration to work properly.
 
 # Project Information
-project_name: bugster-nextjs-example
-project_id: CNBx3CugMe1wRrG2ESHk
+project_name: bugster-nextjs-example-2
+project_id: OzfBam6pZbVrvG7X006Q
 base_url: "http://localhost:3000"
 
 # Project Authentication
-credentials:
-  - id: admin
-    username: admin
-    password: admin
+# credentials:
 
 # Vercel Configuration
 # You can create the Vercel Protection Bypass Secret for Automation in this link:
 # https://vercel.com/d?to=/[team]/[project]/settings/deployment-protection&title=Deployment+Protection+settings
-# x-vercel-protection-bypass: your-bypass-secret
+# x-vercel-protection-bypass: kjwdhjkwhjkcdhkjdhjk
 
 
 # Test Execution Preferences
