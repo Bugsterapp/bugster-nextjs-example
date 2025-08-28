@@ -1,0 +1,15 @@
+name: Test applying and removing promo code
+page: shopping-cart
+page_path: app/cart/order-summary.tsx
+task: Verify that a user can apply a valid promo code and remove it
+steps:
+- Navigate to the shopping cart page
+- Enter 'BUGSTER50' in the promo code input field
+- Click the 'Apply' button
+- Verify that a success message appears indicating '50% off'
+- Verify that the applied promo code is displayed with a green checkmark
+- Click the 'Remove' button next to the applied promo code
+- Verify that a success message appears indicating 'Promo code removed'
+- Verify that the promo code form is displayed again
+expected_result: The promo code should be successfully applied with a success message
+  and can be removed when clicking the Remove button

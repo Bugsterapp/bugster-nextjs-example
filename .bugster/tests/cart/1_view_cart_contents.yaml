@@ -7,4 +7,12 @@ steps:
 - Navigate to the cart page
 - Verify product appears in the cart list
 - Verify product details (name, color, size, price) are correct
-expected_result: Cart page displays all added items with correct details
+- Verify order summary section shows correct item count badge
+- Verify estimated delivery date is displayed
+- Verify subtotal calculation is correct
+- Check if free delivery is applied for orders over $50
+- Verify tax calculation (8% of subtotal)
+- Verify total amount includes subtotal, shipping, discounts, and tax
+expected_result: Cart page displays all added items with correct details, order summary
+  with item count, pricing details including subtotal, shipping, tax, and dynamic
+  elements like estimated delivery date
