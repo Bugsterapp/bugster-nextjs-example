@@ -8,10 +8,7 @@ interface PromoCodeSectionProps {
 }
 
 const validPromoCodes = {
-  'SAVE10': { discount: 0.10, description: '10% off' },
-  'WELCOME20': { discount: 0.20, description: '20% off for new customers' },
-  'FREESHIP': { discount: 0, description: 'Free shipping', freeShipping: true },
-  'SUMMER25': { discount: 0.25, description: '25% off summer sale' },
+  'BUGSTER50': { discount: 0.50, description: '50% off' },
 };
 
 export function PromoCodeSection({ subtotal }: PromoCodeSectionProps) {
