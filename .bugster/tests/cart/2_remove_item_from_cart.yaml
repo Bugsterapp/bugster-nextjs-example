@@ -5,7 +5,15 @@ task: Verify users can remove items from their cart
 steps:
 - Add a product to cart from the homepage
 - Navigate to the cart page
+- Verify the item count badge shows the correct number of items
+- Verify the estimated delivery date is displayed
 - Click the remove button on a cart item
 - Verify the item is removed from the cart
-- Verify cart total is updated
-expected_result: Item is removed from cart and cart is updated
+- Verify cart item count badge is updated
+- Verify subtotal is updated
+- Verify tax amount is recalculated
+- "Verify shipping cost is updated (free if subtotal \u2265 $50)"
+- Verify free delivery banner appears if subtotal < $50
+expected_result: Item is removed from cart, cart total is updated, and all related
+  cart elements are refreshed including subtotal, tax, shipping cost, item count badge,
+  and estimated delivery date

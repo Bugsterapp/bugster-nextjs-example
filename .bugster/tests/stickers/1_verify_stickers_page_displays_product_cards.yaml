@@ -1,0 +1,23 @@
+name: Verify Stickers Page Displays Product Cards
+page: StickersPage
+page_path: app/stickers/page.tsx
+task: Verify that the Stickers page correctly displays all sticker products with their
+  information
+steps:
+- Navigate to the stickers page
+- Verify the page heading 'Stickers Collection' is displayed
+- Verify the subheading 'Discover our amazing collection of high-quality stickers'
+  is displayed
+- Verify that 6 sticker product cards are displayed on the page
+- Verify the 'Circle Sticker Pack' product is displayed with price $12.99
+- Verify the 'Star Sticker Collection' product is displayed with price $15.99
+- Verify the 'Emoji Sticker Set' product is displayed with price $10.99
+- Verify the 'Nature Sticker Pack' product is displayed with price $14.99
+- Verify the 'Geometric Sticker Set' product is displayed with price $13.99
+- Verify the 'Holographic Sticker Pack' product is displayed with price $18.99
+- Click on a color option for any product
+- Verify the selected color is highlighted
+- Click the 'Add to Cart' button for a product
+- Verify a success toast message appears confirming the item was added to cart
+expected_result: The page should display all 6 sticker products with their names,
+  prices, descriptions, and color options
