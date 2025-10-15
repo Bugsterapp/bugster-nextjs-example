@@ -1,11 +1,10 @@
-// eslint-disable-next-line import/no-unresolved -- unsure
-import withVercelToolbar from '@vercel/toolbar/plugins/next';
-
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    ppr: 'incremental',
-  },
-};
+import createWithVercelToolbar from '@vercel/toolbar/plugins/next';
 
-export default withVercelToolbar()(nextConfig);
+const nextConfig = {
+  // Config options here
+};
+ 
+const withVercelToolbar = createWithVercelToolbar();
+// Instead of export default nextConfig, do this:
+export default withVercelToolbar(nextConfig);
